@@ -1,13 +1,25 @@
-
-
 :root {
-    --global-heading-spacing:0 0 30px 0;
-    --global-content-body-spacing:60px;
-    --global-interactive-card-spacing:100px;
+  --global-heading-spacing: 0 0 30px 0;
+  --global-content-body-spacing: 60px;
+  --global-interactive-card-spacing: 100px;
 }
 
-body{
-    font-family: "Overlock";
+body {
+  font-family: "Overlock";
+}
+
+/*Global CSS*/
+
+.about_wrapper .about_text h1,
+.our_school .our_school_inner_wrapper h1,.chairperson .inner_text h1 {
+  font-size: 32px;
+  font-weight: 900;
+  line-height: 39.04px;
+  padding: var(--global-heading-spacing);
+}
+.about_wrapper .about_text h1 span,
+.our_school .our_school_inner_wrapper h1 span,.chairperson .inner_text h1 span {
+  color: rgba(24, 120, 188, 1);
 }
 
 /*
@@ -17,90 +29,149 @@ Header + BG Video CSS
   padding: 20px 92.72px;
 }
 
-.main_wrapper .nav_links ul{
-    list-style-type: none;
+.main_wrapper .nav_links ul {
+  list-style-type: none;
 }
 .header {
-    z-index: 10000;
-    background: linear-gradient(to right, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5), rgba(254, 254, 254, 0.5), rgb(178 178 178 / 74%), rgba(153, 153, 153, 0.5));
-    backdrop-filter: blur(10px);
+  z-index: 10000;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0.5),
+    rgba(255, 255, 255, 0.5),
+    rgba(254, 254, 254, 0.5),
+    rgb(178 178 178 / 74%),
+    rgba(153, 153, 153, 0.5)
+  );
+  backdrop-filter: blur(10px);
 }
 
-.main_wrapper .nav_links ul li{
-    color: rgba(255, 255, 255, 1);
-    font-size: 18px;
-    font-weight: 700;
+.main_wrapper .nav_links ul li {
+  color: rgba(255, 255, 255, 1);
+  font-size: 18px;
+  font-weight: 700;
 }
 
 .text_over_video {
-    bottom: 27%;
-    left: 109px;
+  bottom: 27%;
+  left: 109px;
 }
-.text_over_video p:nth-child(1){
-    color: rgba(255, 255, 255, 1);
-    font-size: 65px;
-    font-weight: 900;
-    line-height: 79.3px;
-    text-transform: uppercase;
+.text_over_video p:nth-child(1) {
+  color: rgba(255, 255, 255, 1);
+  font-size: 65px;
+  font-weight: 900;
+  line-height: 79.3px;
+  text-transform: uppercase;
 }
-.text_over_video p span{
-    color: rgba(255, 255, 255, 1);
-    font-size: 94px;
-    font-weight: 900;
-    line-height: 79.3px;
-    text-transform: uppercase;
+.text_over_video p span {
+  color: rgba(255, 255, 255, 1);
+  font-size: 94px;
+  font-weight: 900;
+  line-height: 79.3px;
+  text-transform: uppercase;
 }
-.text_over_video p:nth-child(2){
-    color: rgba(255, 255, 255, 1);
-    font-size: 48px;
-    font-weight: 700;
-    line-height: 58.56px;
+.text_over_video p:nth-child(2) {
+  color: rgba(255, 255, 255, 1);
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 58.56px;
 }
 
 /*About Section CSS*/
-.about_wrapper{
-    padding: var( --global-content-body-spacing);
-}
-.about_wrapper .about_text h1{
-    font-size: 32px;
-    font-weight: 900;
-    line-height: 39.04px;
-    padding: var(--global-heading-spacing);
-}
-.about_wrapper .about_text h1 span{
-    color: rgba(24, 120, 188, 1);
-}
-.about_wrapper .about_text p{
-    color: rgba(51, 51, 51, 1);
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 21.96px;
-    margin: 0;
-}
-.about_wrapper .column_inner_text .column_body .icon p{
-    font-size: 28px;
-    line-height: 32px;
-    color: rgba(51, 51, 51, 1);
-    font-weight: 900;
+.about_wrapper {
+  padding: var(--global-content-body-spacing);
 }
 
-.about_wrapper .column_inner_text .column_body .icon p span{
-    color: rgba(24, 120, 188, 1);
+.about_wrapper .about_text p {
+  color: rgba(51, 51, 51, 1);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 21.96px;
+  margin: 0;
+}
+.about_wrapper .column_inner_text .column_body .icon p {
+  font-size: 28px;
+  line-height: 32px;
+  color: rgba(51, 51, 51, 1);
+  font-weight: 900;
 }
 
-.about_wrapper .boxSite p{
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 24px;
-    color: rgba(51, 51, 51, 1);
+.about_wrapper .column_inner_text .column_body .icon p span {
+  color: rgba(24, 120, 188, 1);
+}
+
+.about_wrapper .boxSite p {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: rgba(51, 51, 51, 1);
 }
 .about_wrapper .column_body {
-    background: rgba(255, 255, 255, 1);
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 18px 15px 35px 0 rgba(0, 0, 0, 0.09);
-    height: inherit;
+  background: rgba(255, 255, 255, 1);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 18px 15px 35px 0 rgba(0, 0, 0, 0.09);
+  height: inherit;
 }
-.about_wrapper .column_inner_text{
-    height: 100%;
+.about_wrapper .column_inner_text {
+  height: 100%;
+}
+
+/*Our School Section CSS*/
+.our_school{
+    background-color: rgba(221, 236, 245, 1);
+    padding: var(--global-content-body-spacing);
+}
+
+body .our_school .owl-stage {
+    display: flex;
+    gap: 25px;
+}
+body .our_school .owl-item {
+    background: rgba(255, 255, 255, 1);
+    padding: 20.07px;
+    border-radius: 10.04px;
+    margin: 0 !important;
+    display: flex;
+}
+
+.heading_wrapper p{
+    font-size: 22.52px;
+    line-height: 27.47px;
+}
+div#box0 .heading_wrapper {
+    color: rgba(24, 120, 188, 1);
+}
+div#box1 .heading_wrapper {
+    color: rgba(77, 50, 117, 1);
+}
+div#box2 .heading_wrapper {
+    color: rgba(2, 91, 140, 1);
+}
+div#box0 .heading_wrapper p:nth-child(1),div#box1 .heading_wrapper p:nth-child(1),div#box2 .heading_wrapper p:nth-child(1){
+    font-weight: 700;
+}
+div#box0 .heading_wrapper p:nth-child(2),div#box1 .heading_wrapper p:nth-child(2),div#box2 .heading_wrapper p:nth-child(2){
+    font-weight: 400;
+}
+
+/*Chairperson Section CSS*/
+.chairperson {
+    padding: var(--global-content-body-spacing);
+}
+.chairperson p{
+    font-size: 18px;
+    color: rgba(51, 51, 51, 1);
+    font-weight: 400;
+    line-height: 22.5px;
+}
+.chairperson button{
+    border: none;
+    background: rgba(24, 120, 188, 1);
+    padding: 10px;
+    border-radius: 10px;
+    color: white;
+    font-size: 18px;
+    line-height: 22.5px;
+    font-weight: 700;
+    cursor: pointer;
 }
