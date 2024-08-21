@@ -373,6 +373,33 @@ div#box2 .heading_wrapper p:nth-child(2) {
   width: 13px;
 }
 
+.upcoming_events .owl-carousel .owl-item img{
+    border-radius: 10px 10px 0 0;
+}
+
+.upcoming_events .event_img .current_tags p:nth-child(1),.upcoming_events .event_img p:nth-child(2){
+    color: rgba(24, 120, 188, 1);
+    margin: 0;
+}
+ 
+.upcoming_events .event_img .current_tags p:nth-child(1){
+    font-weight: 900;
+    font-size: 30px;
+}
+.upcoming_events .event_img .current_tags p:nth-child(2){
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.upcoming_events .current_tags {
+    top: 0;
+    right: 0;
+    background: rgba(221, 236, 245, 1);
+    padding: 10px 15px;
+    opacity: 0.9;
+    border-radius: 0 10px;
+}
+
 body .upcoming_events .owl-item.active {
   height: auto;
 }

@@ -112,7 +112,7 @@ const Events = [
       "Space Program was conducted by ISRO Scientest for the students of Vishwakarma Vidyalaya.",
     Time: "Time: 11:00am - 03:00pm",
     Place: "Location: VV, pune",
-    // EventCurrentMonth: "11",
+    EventCurrentMonth: "11",
     EventCurrentYear: "August",
   },
   {
@@ -122,7 +122,7 @@ const Events = [
       "An Aikido workshop which is a contemporary martial art of harmony was conducted for children at WWS, Balewadi.",
     Time: "Time: 11:00am - 03:00pm",
     Place: "Location: WWS, Balewadi",
-    // EventCurrentMonth: "11",
+    EventCurrentMonth: "11",
     EventCurrentYear: "August",
   },
   {
@@ -132,7 +132,7 @@ const Events = [
       "3 ISRO scientists visited Vishwakarma Vidyalaya and interacted with the students on topic of Space Technology during school’s science exhibition.",
     Time: "Time: 11:00am - 03:00pm",
     Place: "Location: vV pune",
-    // EventCurrentMonth: "11",
+    EventCurrentMonth: "11",
     EventCurrentYear: "August",
   },
 ];
@@ -142,6 +142,9 @@ const upcomingEvent = (eventData, index) => {
 <div class="item">
 <div class="event_img">
 <img src="${eventData.Img}" alt="${index}">
+<div class="current_tags position-absolute d-flex flex-column text-center align-items-center justify-content-center"><p>${eventData.EventCurrentMonth}</p>
+<p>${eventData.EventCurrentYear}</p></div>
+
 </div>
 <div class="event_body">
 <p>${eventData.Title}</p>
