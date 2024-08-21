@@ -406,7 +406,7 @@ body .upcoming_events .owl-item.active {
 body .upcoming_events .owl-stage {
   height: 100%;
   display: flex;
-  padding-bottom: 60px;
+  padding-bottom: 6px;
 }
 body .upcoming_events .item {
   height: 100%;
