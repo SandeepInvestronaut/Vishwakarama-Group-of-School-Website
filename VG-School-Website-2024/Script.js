@@ -1,3 +1,29 @@
+
+/* Mobile Navbar */
+const hamburger = document.querySelector(".hamburger");
+const navMenu = document.querySelector(".nav-menu");
+
+hamburger.addEventListener("click", () => {
+  /* Toggle active class */
+  hamburger.classList.toggle("active");
+  navMenu.classList.toggle("active");
+
+  /* Toggle aria-expanded value */
+  let menuOpen = navMenu.classList.contains("active");
+  //   console.log(menuOpen)
+  let newMenuOpenStatus = menuOpen;
+  hamburger.setAttribute("aria-expanded", newMenuOpenStatus);
+});
+
+// close mobile menu
+document.querySelectorAll(".nav-link").forEach((n) =>
+  n.addEventListener("click", () => {
+    hamburger.classList.remove("active");
+    navMenu.classList.remove("active");
+    //   Need to add Toggle aria-expanded value here as well because it stays as true when you click a menu item
+  })
+);
+
 //OurSchool owl carousel
 const ourSchoolData = [
   {
@@ -157,22 +183,28 @@ document.addEventListener("DOMContentLoaded", () => {
 //our gallery
 const OurGallery = [
     {
-        Img1: 'Assets/G-1.png'
+        Img1: 'Assets/G-1.png',
+        Title:'Cruises'
     },
     {
-        Img1: 'Assets/G-2.png'
+        Img1: 'Assets/G-2.png',
+        Title:'Beach Tours'
     },
     {
-        Img1: 'Assets/G-3.png'
+        Img1: 'Assets/G-3.png',
+        Title:'City Tours'
     },
     {
-        Img1: 'Assets/G-4.png'
+        Img1: 'Assets/G-4.png',
+        Title:'Cruises'
     },
     {
-        Img1: 'Assets/G-5.png'
+        Img1: 'Assets/G-5.png',
+        Title:'Food'
     },
     {
-        Img1: 'Assets/G-6.png'
+        Img1: 'Assets/G-6.png',
+        Title:'Hiking'
     }
 
 ];
@@ -181,6 +213,7 @@ const galleryCarousel = (galleryData, index) => {
     return `
         <div class="image_grid" id="img${index + 1}">
             <img id="img${index + 1}" src="${galleryData.Img1}" alt="Gallery Image ${index + 1}" class="mw-100">
+            <p class="image_grid_title">${galleryData.Title}</p>
         </div>
     `;
 };
@@ -205,3 +238,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // setInterval(updateImages, 2000);
 });
+
+
+
+
+var btn = $('#button');
+
+$(window).scroll(function() {
+  if ($(window).scrollTop() > 300) {
+    btn.addClass('show');
+  } else {
+    btn.removeClass('show');
+  }
+});
+
+btn.on('click', function(e) {
+  e.preventDefault();
+  $('html, body').animate({scrollTop:0}, '300');
+});
+

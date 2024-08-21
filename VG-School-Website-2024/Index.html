@@ -9,7 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
 
-    <!--  OwlCarousel CSS -->
+    <!-- OwlCarousel CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
         integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -33,30 +33,42 @@
 <body>
     <!-- Header Section + Hero Video Section -->
 
-    <div class="main_wrapper position-relative">
-        <div class="header position-absolute w-100">
-            <div class="nav_links">
-                <div class="link d-flex justify-content-between align-items-center">
-                    <div class="logo">
-                        <img src="Assets/VGS_Header_Logo.svg" alt="VG Website Logo" />
-                    </div>
-                    <ul class="d-flex m-0 p-0 gap-5">
-                        <li>About Us</li>
-                        <li>Our Schools</li>
-                        <li>Contact Us</li>
-                    </ul>
-                </div>
+
+    <div class="main_wrapper">
+        <div class="nav_inner_wrapper d-flex justify-content-between">
+            <div class="logo">
+                <img src="Assets/VGS_Header_Logo.svg" alt="VG Website Logo" />
             </div>
+
+
+            <nav class="nav-bar">
+                <ul class="nav-menu d-flex justify-content-center text-center w-100 h-100 flex-column position-fixed">
+                    <li class="nav-item">
+                        <a href="#about" class="nav-link p-0">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#school" class="nav-link p-0">Our Schools</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#contact" class="nav-link p-0">Contact Us</a>
+                    </li>
+                </ul>
+
+                <div class="hamburger position-relative">
+                    <span class="bar d-block"></span>
+                    <span class="bar d-block"></span>
+                    <span class="bar d-block"></span>
+                </div>
+            </nav>
         </div>
+
         <div class="bg_Video_container position-relative overflow-hidden">
-           <div class="video_overlay">
-           </div>
-           <video autoplay muted loop playsinline class="mw-100 h-auto">
-            <source src="Assets/VGS-video.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
-            
-            <!-- <img src="Assets/VGS-Video-Placeholder.png" alt="" srcset="" class="mw-100" /> -->
+            <div class="video_overlay">
+            </div>
+            <video autoplay muted loop playsinline class="mw-100 h-auto">
+                <source src="Assets/VGS-video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
             <div class="text_over_video position-absolute">
                 <p class="m-0">Education<br /><span>for all</span></p>
                 <p>Giving every child the <br />opportunity to learn for life</p>
@@ -64,10 +76,13 @@
         </div>
     </div>
 
+
+
+
     <div class="about_wrapper">
         <div class="about_text">
             <div class="container">
-                <h1>About <span>VGS</span></h1>
+                <h1 id="about">About <span>VGS</span></h1>
                 <p>
                     The Vishwakarma Group of Schools is dedicated to providing diverse
                     and holistic educational experiences that cater to the varied needs
@@ -120,7 +135,7 @@
     <div class="our_school">
         <div class="our_school_inner_wrapper">
             <div class="container">
-                <h1 class="text-center">Our <span>Schools</span></h1>
+                <h1 class="text-center" id="school">Our <span>Schools</span></h1>
                 <div id="owl-demo1" class="owl-carousel owl-theme"></div>
             </div>
         </div>
@@ -218,11 +233,11 @@
 
         <div class="container">
 
-            <h1 class="text-center"><span>Contact</span> Us</h1>
+            <h1 class="text-center" id="contact"><span>Contact</span> Us</h1>
             <div class="form_inner_wrapper">
                 <div class="row align-items-center">
                     <div class="col-md-5 p-0">
-                        <!-- <img src="Assets/form_img.png" alt="form_img" class="mw-100"> -->
+                        <img src="Assets/form_img.png" alt="form_img" class="mw-100">
                     </div>
                     <div class="col-md-6 p-0">
                         <form>
@@ -255,48 +270,54 @@
     <div class="footer">
 
         <div class="container">
-        <div class="footer_inner_wrapper">
-            <div class="row text-center align-items-center">
-                <div class="col-md-4 first">
-                    <img src="Assets/footer_logo.svg" alt="">
-                    <p class="first_para">Vishwakarma Group of Schools empowers students to reach their full potential through diverse, inclusive, and holistic education.</p>
-                   
-                    <div class="social-logos">
-                        <a href=""><img src="Assets/Facebook-logo.svg" alt="facebook"></a>
-                        <a href=""><img src="Assets/instagram-icon-logo.svg" alt="instagram-icon-logo"></a>
-                        <a href=""><img src="Assets/LinkedIn-logo.svg" alt="LinkedIn-logo"></a>
-                        <a href=""><img src="Assets/yt.jpg" alt="youtube-logo"></a>
-                    </div>
+            <div class="footer_inner_wrapper">
+                <div class="row text-center align-items-center">
+                    <div class="col-md-4 first">
+                        <img src="Assets/footer_logo.svg" alt="">
+                        <p class="first_para">Vishwakarma Group of Schools empowers students to reach their full
+                            potential through diverse, inclusive, and holistic education.</p>
 
-                    <p class="second_para">©2024 Vishwakarma group of schools | All rights reserved</p>
-                </div>
-                <div class="col-md-4 second">
-                    <p>Quick Links</p>
-                    <p>About Us</p>
-                    <p>Our Schools</p>
-                    <p>Contact Us</p>
-                </div>
-                <div class="col-md-4 third">
-                    <p>Vishwakarma Group of Schools</p>
-                    <p>VIIT, Sr.No. 3,4 Laxmi Nagar, Kondhwa Bk., Pune 411048</p>
-                    <div class="map">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.7990645017017!2d73.86676431489232!3d18.492758687425244!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb2f36dfc0cbc519f!2sVishwakarma+Group+(Corporate+Office)!5e0!3m2!1sen!2sin!4v1524115723216" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen=""></iframe>
+                        <div class="social-logos">
+                            <a href="https://www.facebook.com/vishwakarmagroupofschools/"><img src="Assets/Facebook-logo.svg" alt="facebook"></a>
+                            <a href="https://www.instagram.com/thevgschools/"><img src="Assets/instagram-icon-logo.svg" alt="instagram-icon-logo"></a>
+                            <a href="https://www.linkedin.com/company/vishwakarma-group-of-schools/"><img src="Assets/LinkedIn-logo.svg" alt="LinkedIn-logo"></a>
+                            <a href=" https://www.youtube.com/@VishwakarmaGroupofSchools"><img src="Assets/yt.jpg" alt="youtube-logo"></a>
+                        </div>
+
+                        <p class="second_para">©2024 Vishwakarma group of schools | All rights reserved</p>
+                    </div>
+                    <div class="col-md-4 second">
+                        <p>Quick Links</p>
+                        <div class="footer_navlink">
+                            <p> <a href="#about" class="nav-link p-0">About Us</a></p>
+                            <p> <a href="#school" class="nav-link p-0">Our Schools</a></p>
+                            <p> <a href="#contact" class="nav-link p-0">Contact Us</a></p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 third">
+                        <p>Vishwakarma Group of Schools</p>
+                        <p>VIIT, Sr.No. 3,4 Laxmi Nagar, Kondhwa Bk., Pune 411048</p>
+                        <div class="map">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.7990645017017!2d73.86676431489232!3d18.492758687425244!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xb2f36dfc0cbc519f!2sVishwakarma+Group+(Corporate+Office)!5e0!3m2!1sen!2sin!4v1524115723216"
+                                width="100%" height="450" frameborder="0" style="border:0" allowfullscreen=""></iframe>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
         </div>
     </div>
 
     <div class="footer_copyright">
         <div class="container">
             <div class="copyright_inner">
-                <p class="text-center m-0">Copyright © 2024 Vishwakarma Group. All Rights Reserved.  </p>
+                <p class="text-center m-0">Copyright © 2024 Vishwakarma Group. All Rights Reserved. </p>
             </div>
         </div>
     </div>
 
-
+<!-- Back to top button -->
+<a id="button"></a>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
@@ -308,7 +329,7 @@
         integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-    <!--OwlCarousel JS-->
+    <!-- OwlCarousel JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
         integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
