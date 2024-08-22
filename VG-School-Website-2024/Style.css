@@ -563,7 +563,7 @@ p.image_grid_title {
   text-align: left;
 }
 .footer .first .first_para {
-  font-size: 14px;
+  font-size: 16px;
   color: rgba(255, 255, 255, 1);
   font-weight: 400;
   text-align: left;
@@ -571,10 +571,11 @@ p.image_grid_title {
   margin-bottom: 27px;
 }
 .footer .first .second_para {
-  font-size: 13px;
+  font-size: 14px;
   color: rgba(216, 216, 220, 1);
   font-weight: 400;
   text-align: left;
+  margin-top: 30px;
 }
 .footer .second .footer_navlink p a:nth-child(1) {
   font-weight: 400;
