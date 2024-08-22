@@ -204,9 +204,11 @@ video {
 
 /*Our School Section CSS*/
 .our_school,
-.VGS_legacy {
+.VGS_legacy,
+.gallery_img {
   background-color: rgba(221, 236, 245, 1);
   padding: var(--global-content-body-spacing);
+  box-shadow: 12px 15px 25px 0 rgba(0, 0, 0, 0.09);
 }
 
 body .our_school .owl-stage {
@@ -429,27 +431,27 @@ body .upcoming_events .item {
   height: 100%;
 }
 
-div#img1 {
+div#img_container1 {
   grid-area: 1 / 1 / 2 / 2; /* Top-left corner */
 }
 
-div#img2 {
+div#img_container2 {
   grid-area: 1 / 2 / 3 / 4; /* Spanning two columns */
 }
 
-div#img3 {
+div#img_container3 {
   grid-area: 1 / 4 / 2 / 6; /* Spanning two columns */
 }
 
-div#img4 {
+div#img_container4 {
   grid-area: 2 / 1 / 3 / 2; /* Bottom-left corner */
 }
 
-div#img5 {
+div#img_container5 {
   grid-area: 2 / 4 / 3 / 5; /* Less span: occupies 1 column */
 }
 
-div#img6 {
+div#img_container6 {
   grid-area: 2 / 5 / 3 / 6; /* More span: occupies 2 columns */
 }
 
@@ -457,11 +459,6 @@ div#img6 {
   height: inherit;
   object-fit: cover;
   border-radius: 10px;
-}
-
-.gallery_img {
-  background: rgba(221, 236, 245, 1);
-  padding: var(--global-content-body-spacing);
 }
 
 .image_grid {
@@ -475,6 +472,19 @@ p.image_grid_title {
     font-size: 19.53px;
     margin-left: 22px;
 }
+
+
+.image_grid img,
+.image_grid_title {
+    transition: opacity 0.5s ease-in-out;
+    opacity: 1;
+}
+
+.hidden {
+    opacity: 0;
+}
+
+
 
 /*Contact Form CSS*/
 .contact_us {
@@ -517,11 +527,6 @@ p.image_grid_title {
   .contact_us .col-md-5 {
     flex: 0 0 auto;
     width: 40%;
-    background-image: url(Assets/form_img.png);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    min-height: 495px;
   }
 }
 
@@ -532,10 +537,24 @@ p.image_grid_title {
   }
 }
 
+.contact_us .col-md-5 img{
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px 0 0 10px;
+}
+
+.error-msg {
+  margin: 0;
+  font-weight: 600;
+  font-size: 14px;
+  color: #ff0606;
+  padding: 4px;
+}
+
 /*Footer Section CSS*/
 .footer {
   background: rgba(24, 120, 188, 1);
-  padding: 40px;
+  padding: 40px 40px 30px 40px;
 }
 .footer .first {
   text-align: left;
@@ -587,7 +606,7 @@ p.image_grid_title {
 }
 .footer .map iframe {
   width: 100%;
-  height: 236px;
+  height: 200px;
   border-radius: 16px;
   margin-top: 20px;
 }
@@ -707,6 +726,9 @@ p.image_grid_title {
   }
   .upcoming_events .places_venus p{
     line-height: initial !important;
+  }
+  .contact_us .col-md-5 img{
+    border-radius: 10px 10px 0 0;
   }
 }
 
@@ -831,3 +853,6 @@ p.image_grid_title {
     visibility: visible;
   }
   
+  body .owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
+    background: #1878bc;
+}

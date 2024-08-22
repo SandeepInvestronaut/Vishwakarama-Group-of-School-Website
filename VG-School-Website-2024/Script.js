@@ -1,4 +1,3 @@
-
 /* Mobile Navbar */
 const hamburger = document.querySelector(".hamburger");
 const navMenu = document.querySelector(".nav-menu");
@@ -182,81 +181,151 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-
 //our gallery
 const OurGallery = [
-    {
-        Img1: 'Assets/G-1.png',
-        Title:'Cruises'
-    },
-    {
-        Img1: 'Assets/G-2.png',
-        Title:'Beach Tours'
-    },
-    {
-        Img1: 'Assets/G-3.png',
-        Title:'City Tours'
-    },
-    {
-        Img1: 'Assets/G-4.png',
-        Title:'Cruises'
-    },
-    {
-        Img1: 'Assets/G-5.png',
-        Title:'Food'
-    },
-    {
-        Img1: 'Assets/G-6.png',
-        Title:'Hiking'
-    }
-
+  {
+    Img1: "Assets/G-1.png",
+    Title1: "Cruises",
+  },
+  {
+    Img1: "Assets/G-2.png",
+    Title1: "Beach Tours",
+  },
+  {
+    Img1: "Assets/G-3.png",
+    Title1: "City Tours",
+  },
+  {
+    Img1: "Assets/G-4.png",
+    Title1: "Cruises",
+  },
+  {
+    Img1: "Assets/G-5.png",
+    Title1: "Food",
+  },
+  {
+    Img1: "Assets/G-6.png",
+    Title1: "Hiking",
+  },
 ];
 
+var numImages;
+
 const galleryCarousel = (galleryData, index) => {
-    return `
-        <div class="image_grid" id="img${index + 1}">
-            <img id="img${index + 1}" src="${galleryData.Img1}" alt="Gallery Image ${index + 1}" class="mw-100">
-            <p class="image_grid_title">${galleryData.Title}</p>
+  // Calculate the number of images dynamically
+  numImages = Object.keys(galleryData).filter((key) =>
+    key.startsWith("Img")
+  ).length;
+
+  // Get the image and title for the first set (Initial values)
+  const imgSrc = galleryData[`Img1`] || "";
+  const titleText = galleryData[`Title1`] || "";
+
+  return `
+    <div class="image_grid" id="img_container${index + 1}">
+            <img id="img${index + 1}" src="${imgSrc}" alt="Gallery Image ${
+    index + 1
+  }" class="mw-100">
+            <p id="title${index + 1}" class="image_grid_title">${titleText}</p>
         </div>
+
     `;
 };
 
 let currentIndex = 0;
 
 const updateImages = () => {
-    OurGallery.forEach((galleryData, index) => {
-        const imgElement = document.getElementById(`img${index + 1}`);
-        if (imgElement) {
-            imgElement.src = galleryData[`Img${currentIndex + 1}`];
-        }
-    });
-    currentIndex = (currentIndex + 1) % 3;
+  OurGallery.forEach((galleryData, index) => {
+    // Calculate the number of images dynamically
+    const numImages = Object.keys(galleryData).filter((key) =>
+      key.startsWith("Img")
+    ).length;
+
+    // console.log("index " +index)
+
+    const imgElement = document.getElementById(`img${index + 1}`);
+    const titleElement = document.getElementById(`title${index + 1}`);
+
+    if (imgElement && titleElement) {
+      // Calculate the current image and title index based on the number of images
+      const imgIndex = (currentIndex % numImages) + 1;
+      const titleIndex = imgIndex;
+      console.log("img index " + imgIndex);
+
+      imgElement.src = galleryData[`Img${imgIndex}`] || "";
+      titleElement.textContent = galleryData[`Title${titleIndex}`] || "";
+    }
+  });
+
+  // Update currentIndex for the next set
+  currentIndex =
+    (currentIndex + 1) %
+    Object.keys(OurGallery[0]).filter((key) => key.startsWith("Img")).length;
+  // console.log('dyn'+currentIndex)
 };
 
-document.addEventListener('DOMContentLoaded', () => {
-    const image_slider = document.getElementById("image_slider");
-    OurGallery.forEach((galleryData, index) => {
-        image_slider.innerHTML += galleryCarousel(galleryData, index);
-    });
+document.addEventListener("DOMContentLoaded", () => {
+  const image_slider = document.getElementById("image_slider");
+  OurGallery.forEach((galleryData, index) => {
+    image_slider.innerHTML += galleryCarousel(galleryData, index);
+  });
 
-    // setInterval(updateImages, 2000);
+  setInterval(updateImages, 2000);
 });
 
+//Bottom to top
 
+var btn = $("#button");
 
-
-var btn = $('#button');
-
-$(window).scroll(function() {
+$(window).scroll(function () {
   if ($(window).scrollTop() > 300) {
-    btn.addClass('show');
+    btn.addClass("show");
   } else {
-    btn.removeClass('show');
+    btn.removeClass("show");
   }
 });
 
-btn.on('click', function(e) {
+btn.on("click", function (e) {
   e.preventDefault();
-  $('html, body').animate({scrollTop:0}, '300');
+  $("html, body").animate({ scrollTop: 0 }, "300");
 });
 
+//Contact Form Validation
+
+function validateform() {
+  let name = document.myform.name.value.trim();
+  let email = document.myform.email.value.trim();
+  let message = document.myform.message.value.trim();
+
+  // Error message elements
+  let nameError = document.getElementById("name-error");
+  let emailError = document.getElementById("email-error");
+  let messageError = document.getElementById("message-error");
+
+  // Clear previous error messages
+  nameError.innerHTML = "";
+  emailError.innerHTML = "";
+  messageError.innerHTML = "";
+
+  let valid = true;
+
+  // Error messages
+  const nameErrorMsg = "Please enter full name";
+  const emailErrorMsg = "Please enter an email address";
+  const messageErrorMsg = "Please enter your message";
+
+  if (name === "") {
+    nameError.innerHTML = nameErrorMsg;
+    valid = false;
+  }
+  if (email === "") {
+    emailError.innerHTML = emailErrorMsg;
+    valid = false;
+  }
+  if (message === "") {
+    messageError.innerHTML = messageErrorMsg;
+    valid = false;
+  }
+
+  return valid;
+}
