@@ -29,30 +29,37 @@ const ourSchoolData = [
     Img: "Assets/our-school-1.png",
     Heading: "Vishwakarma Vidyalaya",
     Title: "Bibwewadi",
+    Url:"https://vvp.edu.in/",
   },
   {
     Img: "Assets/our-school-2.png",
     Heading: "Wisdom World School",
     Title: "Wakad | Hadapsar",
+    Url:"https://www.wisdomworldschool.in/",
+ 
   },
   {
     Img: "Assets/our-school-3.png",
     Heading: "Universal Wisdom School",
-    Title: "Balewadi",
+    Url:"https://www.universalwisdomschool.in/",
   },
 ];
 
+
 const ourSchoolDataHandler = (dataList, index) => {
   return `
-<div class="item" id="box${index}">
-<div class="school_img">
-<img src=${dataList.Img} alt=${index}>
-</div>
-<div class="heading_wrapper text-center pt-3">
-<p class="m-0">${dataList.Heading}</p>
-<p class="m-0">${dataList.Title}</p>
-</div>
-</div>
+<a href=${dataList.Url} target="_blank">
+    <div class="item" id="box${index}">
+        <div class="school_img">
+            <img src="${dataList.Img}" alt="${index}">
+        </div>
+        <div class="heading_wrapper text-center pt-3">
+            <p class="m-0">${dataList.Heading}</p>
+            <p class="m-0">${dataList.Title}</p>
+        </div>
+    </div>
+</a>
+
 `;
 };
 
@@ -184,36 +191,72 @@ document.addEventListener("DOMContentLoaded", () => {
 //our gallery
 const OurGallery = [
   {
-    Img1: "Assets/G-1.png",
-    Title1: "Cruises",
+    Img1: "Assets/co-1.png",
+    Title1: "Co-curricular Activities",
+    Img2: "Assets/co-2.png",
+    Title2: "Co-curricular Activities",
+    Img3: "Assets/co-3.png",
+    Title3: "Co-curricular Activities",
+    Img4: "Assets/co-4.png",
+    Title4: "Co-curricular Activities",
   },
   {
-    Img1: "Assets/G-2.png",
-    Title1: "Beach Tours",
+    Img1: "Assets/award-1.png",
+    Title1: "Awards",
+    Img2: "Assets/award-2.png",
+    Title2: "Awards",
+    Img3: "Assets/award-3.png",
+    Title3: "Awards",
+    Img4: "Assets/award-4.png",
+    Title4: "Awards",
   },
   {
-    Img1: "Assets/G-3.png",
-    Title1: "City Tours",
+    Img1: "Assets/e-1.png",
+    Title1: "Events",
+    Img2: "Assets/e-2.png",
+    Title2: "Events",
+    Img3: "Assets/e-3.png",
+    Title3: "Events",
+    Img4: "Assets/e-4.png",
+    Title4: "Events",
   },
   {
-    Img1: "Assets/G-4.png",
-    Title1: "Cruises",
+    Img1: "Assets/a-1.png",
+    Title1: "Annual Day",
+    Img2:"Assets/a-2.png",
+    Title2: "Annual Day",
+    Img3:"Assets/a-3.png",
+    Title3: "Annual Day",
+    Img4:"Assets/a-4.png",
+    Title4: "Annual Day",
   },
   {
-    Img1: "Assets/G-5.png",
-    Title1: "Food",
+    Img1: "Assets/infa-1.png",
+    Title1: "Infrastructure",
+    Img2: "Assets/infa-2.png",
+    Title2: "Infrastructure",
+    Img3: "Assets/infa-3.png",
+    Title3: "Infrastructure",
+    Img4: "Assets/infa-4.png",
+    Title4: "Infrastructure",
   },
   {
-    Img1: "Assets/G-6.png",
-    Title1: "Hiking",
+    Img1: "Assets/ac-1.png",
+    Title1: "Academics",
+    Img2: "Assets/ac-2.png",
+    Title2: "Academics",
+    Img3: "Assets/ac-3.png",
+    Title3: "Academics",
+    Img4: "Assets/ac-4.png",
+    Title4: "Academics",
   },
 ];
 
-var numImages;
+let currentIndex = 0;
 
 const galleryCarousel = (galleryData, index) => {
   // Calculate the number of images dynamically
-  numImages = Object.keys(galleryData).filter((key) =>
+  const numImages = Object.keys(galleryData).filter((key) =>
     key.startsWith("Img")
   ).length;
 
@@ -228,11 +271,8 @@ const galleryCarousel = (galleryData, index) => {
   }" class="mw-100">
             <p id="title${index + 1}" class="image_grid_title">${titleText}</p>
         </div>
-
     `;
 };
-
-let currentIndex = 0;
 
 const updateImages = () => {
   OurGallery.forEach((galleryData, index) => {
@@ -241,8 +281,6 @@ const updateImages = () => {
       key.startsWith("Img")
     ).length;
 
-    // console.log("index " +index)
-
     const imgElement = document.getElementById(`img${index + 1}`);
     const titleElement = document.getElementById(`title${index + 1}`);
 
@@ -250,7 +288,6 @@ const updateImages = () => {
       // Calculate the current image and title index based on the number of images
       const imgIndex = (currentIndex % numImages) + 1;
       const titleIndex = imgIndex;
-      console.log("img index " + imgIndex);
 
       imgElement.src = galleryData[`Img${imgIndex}`] || "";
       titleElement.textContent = galleryData[`Title${titleIndex}`] || "";
@@ -258,10 +295,7 @@ const updateImages = () => {
   });
 
   // Update currentIndex for the next set
-  currentIndex =
-    (currentIndex + 1) %
-    Object.keys(OurGallery[0]).filter((key) => key.startsWith("Img")).length;
-  // console.log('dyn'+currentIndex)
+  currentIndex++;
 };
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -272,6 +306,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   setInterval(updateImages, 2000);
 });
+
+
 
 //Bottom to top
 
@@ -328,4 +364,16 @@ function validateform() {
   }
 
   return valid;
+}
+
+function toggleText() {
+  const fullText = document.getElementById("fullText");
+  const shortText = document.getElementById("shortText");
+  const readMore = document.getElementById("readMore");
+  const readLess = document.getElementById("readLess");
+
+  const isFullTextVisible = fullText.style.display !== "none";
+
+  fullText.style.display = isFullTextVisible ? "none" : "block";
+  shortText.style.display = isFullTextVisible ? "block" : "none";
 }
